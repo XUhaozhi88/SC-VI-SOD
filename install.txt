@@ -1,0 +1,25 @@
+conda create -n ScaleIoU python=3.10 -y
+pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+
+
+conda install pytorch==2.4.0 torchvision==0.19.0 torchaudio==2.4.0 pytorch-cuda=12.4 -c pytorch -c nvidia
+pip install torch==2.4.0 torchvision==0.19.0 torchaudio==2.4.0 --index-url https://download.pytorch.org/whl/cu118
+
+pip install -U openmim
+mim install mmengine
+mim install "mmcv>=2.0.0rc4, <2.2.0"
+pip install -v -e .
+pip install opencv-python-headless
+pip install scikit-learn==1.6.0
+
+git clone https://github.com/open-mmlab/mmdetection.git
+cd mmdetection
+pip install -v -e .
+
+pip install fairscale, einops, pycocotools==2.0.8
+
+# docker
+apt-get install ffmpeg libsm6 libxext6  -y
+apt-get update && apt-get install libgl1
+
+

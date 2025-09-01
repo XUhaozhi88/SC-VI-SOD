@@ -1,0 +1,7 @@
+tools/dist_train.sh configs/scale_iou/faster-rcnn_r50_fpn_1x_visdrone.py 4 --work-dir results/VisDrone/faster_rcnn/4gpus/
+tools/dist_train.sh configs/scale_iou/faster-rcnn-new_r50_fpn_1x_visdrone.py 4 --work-dir results/VisDrone/faster_rcnn_new/4gpus/64scale_x3/
+
+tools/dist_train.sh configs/scale_iou/retinanet_r50_fpn_1x_visdrone.py 4 --work-dir results/VisDrone/retinanet/4gpus/
+tools/dist_train.sh configs/scale_iou/retinanet-new_r50_fpn_1x_visdrone.py 4 --work-dir results/VisDrone/retinanet_new/4gpus/64scale_x3/
+
+export CUDA_VISIBLE_DEVICES=0,1,2,3; tools/dist_train.sh configs/scale_iou/faster-rcnn_r50_fpn_1x_visdrone.py 4 --work-dir results/VisDrone/faster_rcnn/4gpus/
